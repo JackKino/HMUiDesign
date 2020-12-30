@@ -1,0 +1,12 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "mymodule"
+    },
+    {
+      "name": "matability_description",
+      "value": "Java_Phone_Empty Feature Ability"
+    }
+  ]
+}
