@@ -1,0 +1,44 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "dtse"
+    },
+    {
+      "name": "mainability_description",
+      "value": "Java_Phone_Empty Feature Ability"
+    },
+    {
+      "name": "surfaceproviderability_description",
+      "value": "Java_Phone_Empty Feature Ability"
+    },
+    {
+      "name": "tablistability_description",
+      "value": "Java_Phone_Empty Feature Ability"
+    },
+    {
+      "name": "listability_description",
+      "value": "Java_Phone_Empty Feature Ability"
+    },
+    {
+      "name": "songability_description",
+      "value": "Java_Phone_Empty Feature Ability"
+    },
+    {
+      "name": "recommendability_description",
+      "value": "Java_Phone_Empty Feature Ability"
+    },
+    {
+      "name": "nestedlistability_description",
+      "value": "Java_Phone_Empty Feature Ability"
+    },
+    {
+      "name": "eventhanlderability_description",
+      "value": "Java_Phone_Empty Feature Ability"
+    },
+    {
+      "name": "mulitsongability_description",
+      "value": "Java_Phone_Empty Feature Ability"
+    }
+  ]
+}

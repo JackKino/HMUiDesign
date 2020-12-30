@@ -1,0 +1,126 @@
+{
+  "app": {
+    "bundleName": "com.example.dtse",
+    "vendor": "example",
+    "version": {
+      "code": 1,
+      "name": "1.0"
+    },
+    "apiVersion": {
+      "compatible": 3,
+      "target": 4,
+      "releaseType": "Beta1"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.example.dtse",
+    "name": ".MyApplication",
+    "deviceType": [
+      "phone"
+    ],
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      }
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry"
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "name": "com.example.dtse.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "dtse",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.dtse.SurfaceProviderAbility",
+        "icon": "$media:icon",
+        "description": "$string:surfaceproviderability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.dtse.TablistAbility",
+        "icon": "$media:icon",
+        "description": "$string:tablistability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.dtse.ListAbility",
+        "icon": "$media:icon",
+        "description": "$string:listability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.dtse.SongAbility",
+        "icon": "$media:icon",
+        "description": "$string:songability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.dtse.RecommendAbility",
+        "icon": "$media:icon",
+        "description": "$string:recommendability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.dtse.NestedListAbility",
+        "icon": "$media:icon",
+        "description": "$string:nestedlistability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.dtse.EventHanlderAbility",
+        "icon": "$media:icon",
+        "description": "$string:eventhanlderability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.dtse.MulitSongAbility",
+        "icon": "$media:icon",
+        "description": "$string:mulitsongability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ]
+  }
+}
