@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_content"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+<Text
+    ohos:id="$+id:title"
+    ohos:height="match_content"
+    ohos:width="match_content"
+    ohos:text_size="70"
+    ohos:text="推荐专辑"/>
+    <TableLayout
+        ohos:id="$+id:mulit_tablayout"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:visibility="hide"
+        ohos:column_count="2"
+        />
+    <ListContainer
+        ohos:id="$+id:listContainer"
+        ohos:height="match_parent"
+        ohos:width="match_parent"
+        ohos:orientation="vertical"/>
+
+</DirectionalLayout>

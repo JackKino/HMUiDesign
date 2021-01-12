@@ -16,7 +16,7 @@ import java.util.List;
  * 主要把数据
  * @param <M>  模型
  */
-public class UltimateProvider<M extends Model> extends RecycleItemProvider {
+public class UltimateProvider2<M extends Model2> extends RecycleItemProvider {
     private static final HiLogLabel LABEL_LOG = new HiLogLabel(3, 0xD001100, "Demo");
     /*当前Provider需要的数据*/
     private List<M> models;
@@ -25,6 +25,7 @@ public class UltimateProvider<M extends Model> extends RecycleItemProvider {
     private Object customData;
     /*ItemView中的事件传递到Ability,Slice中的回掉*/
     private EventTransmissionListener eventTransmissionListener;
+    public boolean isShow;
 
     /**
      * 获取自定义数据
@@ -95,9 +96,10 @@ public class UltimateProvider<M extends Model> extends RecycleItemProvider {
      * @param models 模型数据
      * @param context context
      */
-    public UltimateProvider(List<M> models, Context context) {
+    public UltimateProvider2(List<M> models, Context context) {
         this.models = models;
         this.context = context;
+        customData=models;
     }
 
     @Override
@@ -120,52 +122,77 @@ public class UltimateProvider<M extends Model> extends RecycleItemProvider {
         super.onItemMoved(from, to);
     }
 
+
+
+    @Override
+    public Component getComponent(int i, Component component, ComponentContainer componentContainer) {
+       /* M model = models.get(position);
+        component = LayoutScatter.getInstance(context).parse(model.getResource(position),null,false);
+        if (!(component instanceof ComponentContainer)){
+            return null;
+        }*/
+
+        ViewHolder2 viewHolder = null;
+        M model = models.get(i);
+      /*  if (component == null) {
+            HiLog.error(LABEL_LOG,"component == null");
+            viewHolder = createViewHolder(i);
+        }else {
+            viewHolder = (ViewHolder2) component.getTag();
+            //  HiLog.error(LABEL_LOG,"component.getTag()=="+ component.getTag());
+            if (!viewHolder.getClass().equals(model.getHolderClass(i))) {
+                viewHolder = createViewHolder(i);
+            }
+        }*/
+        viewHolder = createViewHolder(i);
+        if (viewHolder == null) {
+            HiLog.error(LABEL_LOG,"viewHolder == null");
+        }
+
+        viewHolder.setPosition(i);
+        viewHolder.setModel(model);
+        viewHolder.setModels(models);
+        viewHolder.onDataBound();
+        viewHolder.setView();
+        return viewHolder.getComponent();
+    }
+
     /**
      * 创建ViewHolder
      * @param position 当前位置
      * @return 返回创建的ViewHolder
      */
-    private ViewHolder createViewHolder(int position){
+    private ViewHolder2 createViewHolder(int position){
         M model = models.get(position);
-        ViewHolder viewHolder = null;
-        Component component = LayoutScatter.getInstance(context).parse(model.getResource(position),null,false);
-        try {
-            Constructor constructor = model.getHolderClass(position).getDeclaredConstructor( EventTransmissionListener.class, Component.class, UltimateProvider.class);
-            viewHolder = (ViewHolder) constructor.newInstance(getEventTransmissionListener(), component, this);
-            component.setTag(viewHolder);
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
+        ViewHolder2 viewHolder = null;
+
+        Component component = LayoutScatter.getInstance(this.context).parse(model.getResource(position),null,false);
+            try {
+                Constructor constructor = model.getHolderClass(position).getDeclaredConstructor( EventTransmissionListener.class, Component.class, UltimateProvider2.class);
+                viewHolder = (ViewHolder2) constructor.newInstance(getEventTransmissionListener(), component, this);
+               // component.setTag(viewHolder);
+            } catch (NoSuchMethodException e) {
+                HiLog.error(LABEL_LOG,"NoSuchMethodException");
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                HiLog.error(LABEL_LOG,"IllegalAccessException");
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                HiLog.error(LABEL_LOG,"InstantiationException");
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                HiLog.error(LABEL_LOG,"InvocationTargetException");
+                e.printStackTrace();
+            }
+
         return viewHolder;
     }
 
-    @Override
-    public Component getComponent(int i, Component component, ComponentContainer componentContainer) {
-        ViewHolder viewHolder;
-        M model = models.get(i);
-        if (component == null) {
-            viewHolder = createViewHolder(i);
-         //   HiLog.error(LABEL_LOG,"createViewHolder=="+i);
-        } else {
-            viewHolder = (ViewHolder) component.getTag();
-          //  HiLog.error(LABEL_LOG,"component.getTag()=="+ component.getTag());
-            if (!viewHolder.getClass().equals(model.getHolderClass(i))) {
-                viewHolder = createViewHolder(i);
-               // HiLog.error(LABEL_LOG,"equals=="+ viewHolder.getClass());
-            }
-        }
-
-       // HiLog.error(LABEL_LOG,"viewHolder.getComponent()=="+viewHolder.getComponent().getId());
-        viewHolder.setPosition(i);
-        viewHolder.setModel(model);
-        viewHolder.onDataBound();
-        return viewHolder.getComponent();
+    public void setShowChecked(boolean isShow){
+        this.isShow=isShow;
+        notifyDataChanged();
     }
+
+
 
 }

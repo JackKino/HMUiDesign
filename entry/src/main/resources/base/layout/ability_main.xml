@@ -5,41 +5,26 @@
     ohos:width="match_parent"
     ohos:orientation="vertical">
 
-
-    <Button
-        ohos:id="$+id:text_helloworld"
-        ohos:height="match_content"
-        ohos:width="match_content"
-        ohos:background_element="$graphic:background_button"
-        ohos:layout_alignment="horizontal_center"
-         ohos:text_alignment="center"
-        ohos:top_margin="20vp"
-        ohos:padding="10vp"
-        ohos:text="SurfaceProvider"
-        ohos:text_size="50"
-    />
-    <Button
-        ohos:id="$+id:tablist_btn"
-        ohos:height="match_content"
-        ohos:width="match_content"
-        ohos:background_element="$graphic:background_button"
-        ohos:layout_alignment="horizontal_center"
-        ohos:padding="10vp"
-        ohos:top_margin="20vp"
-        ohos:text="Tablist"
-        ohos:text_size="50"
+    <PageSlider
+        ohos:id="$+id:ps_main"
+        ohos:height="0vp"
+        ohos:width="match_parent"
+        ohos:weight="1"
         />
-    <Button
-        ohos:id="$+id:list_btn"
+    <TabList
+        ohos:id="$+id:tab_list"
+        ohos:top_margin="10vp"
+        ohos:tab_margin="12vp"
+        ohos:tab_length="60vp"
+        ohos:text_size="15fp"
         ohos:height="match_content"
-        ohos:width="match_content"
-        ohos:background_element="$graphic:background_button"
-        ohos:layout_alignment="horizontal_center"
-        ohos:padding="10vp"
-        ohos:top_margin="20vp"
-        ohos:text="UltimateProvider"
-        ohos:text_size="50"
+        ohos:width="match_parent"
+        ohos:layout_alignment="center|bottom"
+        ohos:orientation="horizontal"
+        ohos:text_alignment="center"
+        ohos:normal_text_color="#999999"
+        ohos:selected_text_color="#FF0000"
+        ohos:selected_tab_indicator_color="#FF0000"
+        ohos:selected_tab_indicator_height="2vp"
         />
-
-
 </DirectionalLayout>

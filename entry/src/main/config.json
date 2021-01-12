@@ -120,6 +120,24 @@
         "label": "entry",
         "type": "page",
         "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.dtse.MultListAbility",
+        "icon": "$media:icon",
+        "description": "$string:multlistability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
+      },
+      {
+        "orientation": "unspecified",
+        "name": "com.example.dtse.NestedMulitListAbility",
+        "icon": "$media:icon",
+        "description": "$string:nestedmulitlistability_description",
+        "label": "entry",
+        "type": "page",
+        "launchType": "standard"
       }
     ]
   }

@@ -3,13 +3,21 @@
     xmlns:ohos="http://schemas.huawei.com/res/ohos"
     ohos:height="match_content"
     ohos:width="match_parent"
+    ohos:background_element="$graphic:background_button"
+    ohos:top_margin="10vp"
     ohos:orientation="vertical">
+<Text
+    ohos:id="$+id:songitem_name"
+    ohos:height="match_content"
+    ohos:width="match_content"
+    ohos:text="title"
+    ohos:text_color="white"
+    ohos:margin="10vp"
+    ohos:text_size="60"
+    />
     <DirectionalLayout
-        ohos:id="$+id:mulit_mainlayout"
+        ohos:id="$+id:songitem_layout"
         ohos:height="match_content"
         ohos:width="match_parent"
-        ohos:min_height="70vp"
-        ohos:background_element="$graphic:background_button"
-        ohos:top_margin="10vp"
         ohos:orientation="horizontal"/>
 </DirectionalLayout>

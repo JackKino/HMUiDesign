@@ -39,6 +39,14 @@
     {
       "name": "mulitsongability_description",
       "value": "Java_Phone_Empty Feature Ability"
+    },
+    {
+      "name": "multlistability_description",
+      "value": "Java_Phone_Empty Feature Ability"
+    },
+    {
+      "name": "nestedmulitlistability_description",
+      "value": "Java_Phone_Empty Feature Ability"
     }
   ]
 }

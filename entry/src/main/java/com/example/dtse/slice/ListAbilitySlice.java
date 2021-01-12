@@ -47,7 +47,9 @@ public class ListAbilitySlice extends AbilitySlice {
         list.add(new MenuItem("嵌套ListContainer","最基础使用","com.example.dtse.NestedListAbility"));
         list.add(new MenuItem("ItemView中的按钮点击、等事件","最基础使用","com.example.dtse.EventHanlderAbility"));
         list.add(new MenuItem("provider设置自定义数据","provider设置自定义数据，方便在ItemView之间以及Activity中共享数据","com.chg.ultimateproviderdemo.Menu.Ability.CustomDataUserAbility"));
-        list.add(new MenuItem("多列的ListView","最基础使用","com.example.dtse.MulitSongAbility"));
+        list.add(new MenuItem("多列的ListView","UltimateProvider","com.example.dtse.MulitSongAbility"));
+        list.add(new MenuItem("多列的ListView","最基础使用","com.example.dtse.MultListAbility"));
+        list.add(new MenuItem("多列嵌套ListContainer","最基础使用","com.example.dtse.NestedMulitListAbility"));
         return list;
     }
 

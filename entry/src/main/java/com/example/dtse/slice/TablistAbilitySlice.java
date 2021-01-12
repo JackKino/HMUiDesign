@@ -7,6 +7,7 @@ import ohos.aafwk.content.Intent;
 import ohos.agp.components.Component;
 import ohos.agp.components.ComponentContainer;
 import ohos.agp.components.TabList;
+import ohos.agp.components.element.VectorElement;
 import ohos.agp.utils.LayoutAlignment;
 import ohos.agp.window.dialog.ToastDialog;
 
@@ -30,6 +31,7 @@ public class TablistAbilitySlice extends AbilitySlice {
             @Override
             public void onSelected(TabList.Tab tab) {
                 // 当某个Tab从未选中状态变为选中状态时的回调
+                tab.setAroundElements(null,new VectorElement(getContext(),ResourceTable.Graphic_find),null,null);
 
                 new ToastDialog(getContext())
                         .setText("从未选中状态变为选中状态时的回调")
@@ -40,6 +42,8 @@ public class TablistAbilitySlice extends AbilitySlice {
             @Override
             public void onUnselected(TabList.Tab tab) {
                 // 当某个Tab从选中状态变为未选中状态时的回调
+                tab.setAroundElements(null,new VectorElement(getContext(),ResourceTable.Graphic_find_hui),null,null);
+
                 new ToastDialog(getContext())
                         .setText("从选中状态变为未选中状态时的回调")
                         .setAlignment(LayoutAlignment.CENTER)
@@ -61,11 +65,20 @@ public class TablistAbilitySlice extends AbilitySlice {
         for (int i = 0; i < str.length; i++) {
             TabList.Tab tab = tabList.new Tab(getContext());
             tab.setText(str[i]);
+            tab.setHeight(ComponentContainer.LayoutConfig.MATCH_CONTENT);
+            if(i==0){
+                tab.setAroundElements(null,new VectorElement(this,ResourceTable.Graphic_find),null,null);
+
+            }else{
+                tab.setAroundElements(null,new VectorElement(this,ResourceTable.Graphic_find_hui),null,null);
+
+            }
             tabList.addTab(tab);
         }
         tabList.setTabLength(ComponentContainer.LayoutConfig.MATCH_CONTENT); // 设置Tab的宽度
         tabList.setTabMargin(30); // 设置两个Tab之间的间距
         tabList.setFixedMode(false);
+        tabList.selectTabAt(0);
     }
 
     // 创建Tab并设置Tab

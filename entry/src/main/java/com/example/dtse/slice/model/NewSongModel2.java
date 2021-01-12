@@ -1,27 +1,25 @@
 package com.example.dtse.slice.model;
 
-import com.chg.ultimateprovider.Model;
 import com.chg.ultimateprovider.Model2;
 import com.example.dtse.ResourceTable;
 import com.example.dtse.slice.ViewHolder.NewSongViewHolder;
 
-
 import java.util.List;
 
-public class NewSongModel implements Model2 {
+public class NewSongModel2 implements Model2 {
     private List<SongData> songModels;
     private String name;
 
-    public NewSongModel(List<SongData> songModels) {
+    public NewSongModel2(List<SongData> songModels) {
         this.songModels = songModels;
     }
 
-    public NewSongModel(List<SongData> songModels, String name) {
+    public NewSongModel2(List<SongData> songModels, String name) {
         this.songModels = songModels;
         this.name = name;
     }
 
-    public NewSongModel(String name) {
+    public NewSongModel2(String name) {
         this.name = name;
     }
 

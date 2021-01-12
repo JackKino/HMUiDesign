@@ -12,4 +12,5 @@ dependencies {
     testCompile'junit:junit:4.12'
     implementation project(":mymodule")
     implementation project(":UltimateProvider")
+    implementation 'com.google.code.gson:gson:2.8.3'
 }

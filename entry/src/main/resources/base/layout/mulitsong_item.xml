@@ -2,19 +2,30 @@
 <DirectionalLayout
     xmlns:ohos="http://schemas.huawei.com/res/ohos"
     ohos:height="match_content"
-    ohos:width="match_content"
+    ohos:width="match_parent"
     ohos:orientation="horizontal"
     ohos:top_margin="5vp"
+    ohos:alignment="center"
     ohos:bottom_margin="5vp">
+    <StackLayout
+        ohos:height="match_content"
+        ohos:width="match_content">
+
     <Image
         ohos:id="$+id:icon"
-        ohos:height="30vp"
-        ohos:width="30vp"
-        ohos:left_margin="5vp"
+        ohos:height="80vp"
+        ohos:width="80vp"
         ohos:right_margin="5vp"
         ohos:image_src="$media:music"
         ohos:scale_mode="zoom_center"
         />
+        <Checkbox
+            ohos:id="$+id:check_box_1"
+            ohos:width="100px"
+            ohos:height="100px"
+            ohos:text_size="100px"
+            ohos:layout_alignment="bottom|right"/>
+    </StackLayout>
     <DirectionalLayout
         ohos:height="match_content"
         ohos:width="match_content"
@@ -22,11 +33,13 @@
         <Text
             ohos:id="$+id:songName"
             ohos:text_size="13fp"
+            ohos:text=""
             ohos:height="match_content"
             ohos:width="match_parent"/>
         <Text
             ohos:id="$+id:songer"
             ohos:height="match_content"
+            ohos:text=""
             ohos:width="match_parent"/>
     </DirectionalLayout>
 </DirectionalLayout>
